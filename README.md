@@ -1,3 +1,14 @@
+---
+title: Email Triage OpenEnv
+emoji: 📧
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+tags:
+  - openenv
+---
+
 # Email Triage OpenEnv
 
 An [OpenEnv](https://openenv.org)-compliant environment that simulates real-world **email triage** tasks. Agents must classify, prioritize, and draft responses to emails — skills that knowledge workers perform daily.
