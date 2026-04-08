@@ -1,0 +1,41 @@
+name: email-triage-env
+version: "1.0.0"
+description: >
+  An OpenEnv environment that simulates real-world email triage tasks.
+  Agents must classify, prioritize, and draft responses to emails across
+  three difficulty levels.
+author: "hackathon-team"
+tags:
+  - openenv
+  - email
+  - triage
+  - nlp
+  - real-world
+
+observation_space:
+  type: object
+  description: "Contains the current email(s) to process and task context"
+
+action_space:
+  type: object
+  description: "Agent actions including classify, prioritize, route, and draft_reply"
+
+reward_range: [0.0, 1.0]
+
+tasks:
+  - id: email_classification
+    name: "Email Classification"
+    difficulty: easy
+    description: "Classify emails into categories: spam, important, newsletter, social, work"
+
+  - id: email_prioritization
+    name: "Email Prioritization & Routing"
+    difficulty: medium
+    description: "Prioritize emails by urgency and route to correct department"
+
+  - id: email_response
+    name: "Email Response Drafting"
+    difficulty: hard
+    description: "Draft appropriate professional responses to complex emails"
+
+entrypoint: "python -m email_triage_env.server"
